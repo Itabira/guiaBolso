@@ -6,7 +6,7 @@ services:
     container_name: guiabolso
     build: .
     ports:
-      - "8086:8086"
+      - "8080:8080"
     networks:
       - default
     volumes:
@@ -23,4 +23,3 @@ volumes:
   ivy2-cache:
   m2-cache:
   gradle-cache:
-
