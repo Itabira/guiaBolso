@@ -1,24 +1,26 @@
 version: "3.7"
+
 services:
-    app:
-        container_name: guiabolso
-        build: .
-        ports:
-            - "8080:8080"
-        networks:
-            - default
-            - integration
-        volumes:
-            - ./:/app
-            - build:/buildDir
-            - ivy2-cache:/root/.ivy2
-            - m2-cache:/root/.m2
-            - gradle-cache:/root/.gradle
-            - ~/.gradle/gradle.properties:/root/.gradle/gradle.properties
-        command: sh gradlew --no-daemon bootRun
+
+  app:
+    container_name: guiabolso
+    build: .
+    ports:
+      - "8086:8086"
+    networks:
+      - default
+    volumes:
+      - ./:/app
+      - build:/buildDir
+      - ivy2-cache:/root/.ivy2
+      - m2-cache:/root/.m2
+      - gradle-cache:/root/.gradle
+      - ~/.gradle/gradle.properties:/root/.gradle/gradle.properties
+    command: sh gradlew --no-daemon bootRun
 
 volumes:
-    build:
-        ivy2-cache:
-        m2-cache:
-        gradle-cache:
+  build:
+  ivy2-cache:
+  m2-cache:
+  gradle-cache:
+
